@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Header from './interface/Hearder'
+import Liste from './contact/Liste'
+import { Provider } from './context'
+import AddContact from './contact/AddContact'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  render() {
+    return (
+      <Provider>
+        <div className="App">
+          <Header />
+          <div className="container">
+            <AddContact/>
+            <Liste />
+          </div>
+        </div>
+      </Provider>
+    )
+  }
 }
 
 export default App;
