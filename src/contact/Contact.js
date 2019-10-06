@@ -4,7 +4,7 @@ import { Consumer } from '../context'
 export default class Contact extends Component {
 
   state = {
-    show: true
+    show: false
   }
 
   montrerContact = () => {
@@ -25,7 +25,10 @@ export default class Contact extends Component {
         {value => {
           return (
             <div className="card card-body mb-3 text-center">
-              <h4>{this.props.nom}&nbsp;<i className="fas fa-angle-down"
+              <h4
+              onClick={this.montrerContact}
+              style={{ cursor: "pointer" }}
+              >{this.props.nom}&nbsp;<i className="fas fa-angle-down"
                 onClick={this.montrerContact}
                 style={{ cursor: "pointer" }}
               ></i>
